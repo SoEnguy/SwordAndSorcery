@@ -1,0 +1,6 @@
+{"phases": [
+				{"name":"intro", 
+				"desc":"Vous vous réveillez au milieu d’un laboratoire en ruine, avec un gout de chair humaine en bouche  (ne me demandez pas comment vous savez que ce n’est pas du boeuf ou du poulet). Vous êtes totalement seul et il fait jour dehors.", 
+				"buttons" : [{"go":"fouiller_labo", "desc":"Fouiller le laboratoire"}, {"go":"call_labo", "desc":"Appeler à l’aide"}], 
+				"actions":[{"name":"start"}]}
+]}
