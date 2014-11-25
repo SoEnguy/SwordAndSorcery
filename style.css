@@ -87,11 +87,3 @@ h2 {
 	color : lightGray;
 	background-color : black;
 }
-
-/* CURSEUR PERSO SISI TAVU */
-html {
-	cursor: url(/cursor.png),auto;
-}
-button:hover {
-	cursor: url(/cursor.png),auto;
-}
