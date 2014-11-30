@@ -13,6 +13,7 @@ $( function() {
     */
     function gotoSection(key) {
         localStorage.setItem("scene", key);
+        localStorage.setItem("life", getLife());
         $(".game div.section").not("#"+key).hide();
         $(".game #"+key).show();
     }
@@ -29,7 +30,7 @@ $( function() {
                 loseOneLife();
                 break;
             case 'heal' :
-                giveOneLife();
+                getOneLife();
             default :
                 break;
         }
@@ -65,12 +66,12 @@ $( function() {
             setLife(getLife()-1);
             endGame();
         } else {
-            setLife(getLife()-1);
+            setLife(parseInt(getLife())-1);
         }
     }
 
     function getOneLife() {
-        setLife(getLife()+1);
+        setLife(parseInt(getLife())+1);
     }
     
     /**
@@ -170,10 +171,12 @@ $( function() {
                 break;
             case 'load' :
                 var scene = localStorage.getItem("scene");
+                var hp = localStorage.getItem("life");
 
                 $(".menu").slideUp(2000, function() {
                     begin(function(){
-                        $(".game #"+scene).slideDown(2000); 
+                        $(".game #"+scene).slideDown(2000);
+                        setLife(hp);
                     });
                 });
                 break;
