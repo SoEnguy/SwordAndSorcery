@@ -12,7 +12,7 @@
 				{"name":"call_labo",
 				"desc":"Vous appelez désespérément à l’aide dans ce laboratoire qui semble plutôt vide, et malgré votre extinction de voix vous entendez une personne approcher au loin. Plus les pas se rapprochent, plus vous êtes plein de questions prêt à demander ce qu’il s’est passé, quand tous d’un coup vous voyez la personne au loin tenant un gros fusil à pompe pointé vers vous et vous explose en petit morceau à travers la pièce.",
 				"buttons":[{"go":"intro", "desc":"Recommencer ?"}],
-				"actions":[{}]},
+				"actions":[{"name":"hit"}]},
 
 				{"name":"clonage_labo",
 				"desc":"Non non, j’ai rien dit, c’est juste le scénariste qui s’est emporté. Et puis de toute façon, votre personnage ne comprend pas vraiment de quoi il s’agit. C’est pas parce que les résultats des tests parlaient d’échecs et de mutation bizarres que c’est forcément intéressant hein ...",
@@ -37,5 +37,17 @@
 				{"name":"goto_grange",
 				"desc":"Vous vous approchez de la grange et entendez des bruits d’animaux : poules, vaches, pingouins, éléphants, cochons. Tout y est. La porte principale est entrouverte, vous pouvez passer par là. Vous voyez également une échelle qui semble monter à l’étage.",
 				"buttons":[{"go":"grange_ladder", "desc":"Monter à l’échelle"}, {"go":"goto_maison", "desc":"Repartir vers la maison"}, {"go":"grange_inside", "desc":"Passer par la porte principale"}],
-				"actions":[{}]}
-]}
+				"actions":[{}]},
+
+				{"name":"grange_ladder",
+				"desc":"L’échelle semble faire 3 à 4 mètres de haut, assez petite en somme. Vous commencez à grimper petit à petit. Vous arrivez en haut sain et sauf. Enfin presque, vous ne l’avez peut être pas remarqué, mais vous vous êtes un peu <span style=”font-size: 6px”>(voire beaucoup)</span> égratigné sur les barreaux.",
+				"buttons":[{"go":"grange_up_fouiller", "desc":"Fouiller l’étage de la grange"}, {"go":"grange_inside_jump", "desc":"Sauter dans la salle principale"}, {"go":"grange_sieste", "desc":"Faire une sieste dans la paille"}],
+				"actions":[{}]},
+
+				{"name":"grange_up_fouiller",
+				"desc":"Vous remuez la paille en haut de la grange, tout ça pour découvrir … Pas grand chose. Vous voyez un poulet mort. Cela ne fait pas bien longtemps. Vous avez vraiment très faim … Vraiment très faim. Sans pouvoir vous contrôler, vous dévorez les entrailles du poulet (franchement c’est pas beau à voir). Bizarrement, ça vous redonne des forces. Descendre l’échelle serait faire demi-tour, il ne vous reste plus qu’à aller dans la grange.",
+				"buttons":[{"go":"grange_inside_jump", "desc":"Sauter dans la grange"}],
+				"actions":[{"name":"heal"}]}
+],
+
+"start_life":1}

@@ -12,6 +12,7 @@ $( function() {
     * parameter key Nom de la page à laquelle aller
     */
     function gotoSection(key) {
+        localStorage.setItem("scene", key);
         $(".game div.section").not("#"+key).hide();
         $(".game #"+key).show();
     }
@@ -19,7 +20,7 @@ $( function() {
     function doAction(key) {
         switch(key) {
             case 'start' :
-                startGame();
+                begin();
                 break;
             case 'reset' :
                 status.hide();
@@ -76,9 +77,9 @@ $( function() {
     * startGame
     * Débute le jeu
     **/
-    function startGame() {
+    function startGame(hp) {
         status.show();
-        setLife(3);
+        setLife(hp);
     }
     
     /**
@@ -102,8 +103,7 @@ $( function() {
         return false;
     };
 
-    $(".game div.section").not("#intro").hide();
-    status.hide();
+    
 
     function generateGame(json) {
         var html ="";
@@ -135,40 +135,52 @@ $( function() {
         }
         $('div.game').append($(html));
 
+        startGame(json.start_life);
+
         console.log("Game generated !");
     }
 
-    $.getJSON("zombie.json", function(data){
-
-        generateGame(data);
-
-        buttons = $(".game button");
-
-        buttons.click(function() {
-            var goTo = $(event.target).attr("go");
-            
-            gotoSection(goTo);
-            
-            if($('.game #'+goTo).find('action').attr('name') != undefined ) {
-                doAction($('#'+goTo).find('action').attr('name'));
-            }
+    function begin(callback) {
+        $.getJSON("zombie.json", function(data){
+            generateGame(data);
+            buttons = $(".game button");
+            buttons.click(function() {
+                var goTo = $(event.target).attr("go");
+                gotoSection(goTo);
+                if($('.game #'+goTo).find('action').attr('name') != undefined ) {
+                    doAction($('#'+goTo).find('action').attr('name'));
+                }
+            });
+            callback();
         });
-
-        //TEMPORAIRE
-        //$("#intro").show();
-    });
+    }
 
     //CODE MENU
     $('.menu button').click(function(){
-        
         var key = $(event.target).attr("go");
 
-        if(key == "game") {
-            $(".menu").slideUp(2000, function() {
-                $(".game #intro").slideDown(2000);
-            });
-            
+
+        switch(key) {
+            case 'game' :
+                $(".menu").slideUp(2000, function() {
+                    begin(function(){
+                        $(".game #intro").slideDown(2000); 
+                    });
+                });
+                break;
+            case 'load' :
+                var scene = localStorage.getItem("scene");
+
+                $(".menu").slideUp(2000, function() {
+                    begin(function(){
+                        $(".game #"+scene).slideDown(2000); 
+                    });
+                });
+                break;
         }
     })
+
+    $(".game div.section").not("#intro").hide();
+    status.hide();
     
 } );
