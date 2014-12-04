@@ -104,37 +104,29 @@ $( function() {
         return false;
     };
 
-    
-
     function generateGame(json) {
-        var html ="";
         for(var i = 0; i < json.phases.length ; i++) {
+            var gameBox = $("<div class='section' id='"+json.phases[i].name+"' style='display: none;'></div>");
 
-            html+= "<div class='section' id='";
-            html+=json.phases[i].name;
-            html+= "' style='display: none;'>";
-            html+= json.phases[i].desc;
-
+            gameBox.text(json.phases[i].desc);
+            
             if (json.phases[i].actions.length > 0) {
 	            for(var k = 1; k<=json.phases[i].actions.length; k++) {
-	                html+="<action name='";
-	                html+=json.phases[i].actions[k-1].name;
-	                html+="'/>";
+	                var action = $("<action name='" + json.phases[i].actions[k-1].name + "'/>");
+
+                    gameBox.append(action);
 	            }
 	        }
 
             if (json.phases[i].buttons.length > 0) {
 	            for(var j = 1; j<=json.phases[i].buttons.length; j++) {
-	                html+="<button go='";
-	                html+=json.phases[i].buttons[j-1].go;
-	                html+="'>";
-	                html+=json.phases[i].buttons[j-1].desc;
-	                html+="</button>";
+	                var button = $("<button go='" + json.phases[i].buttons[j-1].go + "'>" + json.phases[i].buttons[j-1].desc + "</button>");
+
+                    gameBox.append(button);
 	            }
 	        }
-            html+="</div>";
+            $('div.game').append(gameBox);
         }
-        $('div.game').append($(html));
 
         startGame(json.start_life);
 
@@ -145,7 +137,7 @@ $( function() {
         $.getJSON("zombie.json", function(data){
             generateGame(data);
             buttons = $(".game button");
-            buttons.click(function() {
+            buttons.click(function(event) {
                 var goTo = $(event.target).attr("go");
                 gotoSection(goTo);
                 if($('.game #'+goTo).find('action').attr('name') != undefined ) {
@@ -157,10 +149,9 @@ $( function() {
     }
 
     //CODE MENU
-    $('.menu button').click(function(){
+    $('.menu button').click(function(event){
         var key = $(event.target).attr("go");
-
-
+        
         switch(key) {
             case 'game' :
                 $(".menu").slideUp(2000, function() {
