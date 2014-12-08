@@ -13,31 +13,34 @@
 			<h1 style="text-align: center;">Adventure</h1>
 			<button go="game">Nouvelle partie</button>
 			<button go="load">Charger (WIP)</button>
-			<button go="intro">Crédits (WIP)</button>
-			<button go="intro">Créer un scénario (WIP)</button>
+			<button go="credits">Crédits (WIP)</button>
 		</div>
 
 		<div class="game" id="game">
 
 			<div id="select-game">
-				<!-- dropdown avec liste des .json existants -->
+				<h1>Sélectionnez votre aventure</h1>
+				<button play="zombie">Jouer à "Just a regular Z-Day"</button>
+				<button play="base">Jouer à "Epic dungeon of the evil necromancer of doom of the dead"</button>
 			</div>
 
 			<div id="status">
 				<div class="life">
 					Life : <span class="value">--</span>
 				</div>
-			</div>				
+			</div>
+			<div id="inventory">
+				<h1>Inventaire</h1>
+				<table>
+				</table>
+			</div>	
 		</div>
 
 		<div class="credits">
+			<h1 style="text-align: center;">Crédits</h1>
+			<p>Code par : Enguerran Henner</p>
 			<!-- page statique des crédits, bouton retour -->
 		</div>
 
-		<div class="scene-create">
-			<!-- dropdown des .json si "modifiable : true" // création nouveau jeu -->
-			<!-- formulaire pour ajouter une "case" au jeu -->
-			<!-- Si possible visuel schéma cases -->
-		</div>
 	</body>
 </html>

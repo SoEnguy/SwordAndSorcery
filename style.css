@@ -87,3 +87,36 @@ h2 {
 	color : lightGray;
 	background-color : black;
 }
+
+#inventory {
+	float: left;
+	width: 200px;
+	height: 500px; 
+	border : 1px solid lightGray;
+	padding: 10px;
+}
+
+.credits {
+	padding : 10px;
+	margin : auto;
+	margin-top : 100px;
+	max-width : 600px;
+	border : 1px solid lightGray;
+}
+
+#select-game button {
+	display : block;
+	width : 100%;
+	color : black;
+	text-decoration : none;
+	padding : 5px;
+	margin-top : 30px;
+	background : lightGray;
+	border : none;
+	cursor : pointer;
+}
+
+#select-game button:hover {
+	color : lightGray;
+	background-color : black;
+}

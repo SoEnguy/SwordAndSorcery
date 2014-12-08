@@ -113,28 +113,34 @@ $( function() {
             if (json.phases[i].actions.length > 0) {
 	            for(var k = 1; k<=json.phases[i].actions.length; k++) {
 	                var action = $("<action name='" + json.phases[i].actions[k-1].name + "'/>");
-
                     gameBox.append(action);
 	            }
 	        }
-
             if (json.phases[i].buttons.length > 0) {
 	            for(var j = 1; j<=json.phases[i].buttons.length; j++) {
 	                var button = $("<button go='" + json.phases[i].buttons[j-1].go + "'>" + json.phases[i].buttons[j-1].desc + "</button>");
-
                     gameBox.append(button);
 	            }
 	        }
             $('div.game').append(gameBox);
         }
-
         startGame(json.start_life);
-
-        console.log("Game generated !");
     }
 
-    function begin(callback) {
-        $.getJSON("zombie.json", function(data){
+    function generateInventory(){
+        var table = $("#inventory table");
+
+        for (var i = 0; i < 5 ; i++) {
+            var newline = $("<tr></tr>");
+            for (var j = 0; j < 5; j++) {
+                newline.append("<td>X</td>");
+            }
+            table.append(newline);
+        }
+    }
+
+    function begin(game, callback) {
+        $.getJSON(game+".json", function(data){
             generateGame(data);
             buttons = $(".game button");
             buttons.click(function(event) {
@@ -155,9 +161,7 @@ $( function() {
         switch(key) {
             case 'game' :
                 $(".menu").slideUp(2000, function() {
-                    begin(function(){
-                        $(".game #intro").slideDown(2000); 
-                    });
+                    $(".game #select-game").slideDown(2000); 
                 });
                 break;
             case 'load' :
@@ -171,10 +175,37 @@ $( function() {
                     });
                 });
                 break;
+            case 'credits' :
+                $(".menu").slideUp(2000, function() {
+                    $(".credits").slideDown(2000); 
+                });
+                break;
         }
     })
 
+    $("#select-game button").click(function(event){
+        var key = $(event.target).attr("play");
+        switch(key) {
+            case 'base' :
+                $("#select-game").slideUp(2000, function() {
+                    begin("game", function(){
+                        $(".game #intro").slideDown(2000); 
+                    });
+                });
+                break
+            case 'zombie':
+                $("#select-game").slideUp(2000, function() {
+                    begin("zombie", function(){
+                        $(".game #intro").slideDown(2000); 
+                    });
+                });
+                break;
+        }
+    });
+
     $(".game div.section").not("#intro").hide();
+    $(".credits").hide();
+    $(".game #select-game").hide();
     status.hide();
-    
+    generateInventory();
 } );
