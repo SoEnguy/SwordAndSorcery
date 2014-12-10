@@ -33,6 +33,9 @@ $( function() {
             case 'heal' :
                 getOneLife();
                 break;
+            case 'death' :
+                setLife(0);
+                break;
             default :
                 break;
         }
@@ -165,6 +168,11 @@ $( function() {
                     $(".credits").slideDown(1000); 
                 });
                 break;
+            case 'create':
+                $(".menu").slideUp(1000, function() {
+                    $(".create-game").slideDown(1000); 
+                });
+                break;
         }
     })
 
@@ -189,6 +197,7 @@ $( function() {
     });
 
     $(".game div.section").not("#intro").hide();
+    $(".create-game").hide();
     $(".credits").hide();
     $(".game #select-game").hide();
 

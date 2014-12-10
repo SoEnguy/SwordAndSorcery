@@ -72,7 +72,57 @@
 	{"name":"goto_maison",
 	"desc":"Vous vous approchez de la chaumière. C’est sans doute le fermier qui vit là. Ou plutôt vivait. La maison est totalement en ruine. Il manque une tuile sur deux au minimum, la plupart des fenêtres sont brisées, le crépis jonche le sol … Et je ne vous parlerez même pas du jardin si bien … Entretenu. ",
 	"buttons":[{"go":"inside_maison", "desc":"Rentrer dans la maison"}, {"go":"inside_back_maison", "desc":"Contourner la maison"}, {"go":"check_maison", "desc":"Regarder à l'intérieur depuis une fenêtre"}],
-	"actions":[{}]}
+	"actions":[{}]},
+
+	{"name":"inside_maison",
+	"desc":"Vous franchissez silencieusement le seuil de la maisonnette pour vous retrouver dans un salon sens dessus dessous. Vous entendez quelques pas rapides de l’autre côté de la pièce, vers le couloir. Sur votre droite un escalier monte à l’étage. Vous pouvez soit monter, soit aller voir les bruits au fond du couloir.",
+	"buttons":[{"go":"couloir_maison", "desc":"Aller vers le couloir"}, {"go":"upstair_maison", "desc":"Monter les escaliers"}],
+	"actions":[{}]},
+
+	{"name":"inside_back_maison",
+	"desc":"Vous contournez la maison et passez à travers les mauvaises herbes qui vous arrivent environ jusqu’aux genoux. Alors que vous arrivez au coin du mur, vous entendez un gros “clac”. Vous ne sentez rien mais n’arrivez plus à avancer. Un coup d’oeil vous informe que votre pied est pris dans un piège à ours.",
+	"buttons":[{"go":"trap_open", "desc":"Se détacher"}, {"go":"trap_wait", "desc":"Attendre tranquillement"}],
+	"actions":[{"name":"hit"}]},
+
+	{"name":"check_maison",
+	"desc":"Vous longez un mur pour regardez à travers une fenêtre. Vous parcourez la pièce intérieure du regard sans rien voir que des meubles renversés et sales. La poussière recouvre presque chaque centimètre carré de ce qui semblait être un salon. Alors que vous repartez vers une autre fenêtre, vous entendez un gros “clac”. Vous ne sentez rien mais n’arrivez plus à avancer. Un coup d’oeil vous informe que votre pied est pris dans un piège à ours.",
+	"buttons":[{"go":"trap_open", "desc":"Se détacher"}, {"go":"trap_wait", "desc":"Attendre tranquillement"}],
+	"actions":[{"name":"hit"}]},
+
+	{"name":"upstair_maison",
+	"desc":"Vous montez les escaliers en essayant de ne pas trop faire grincer les marches, et c’est franchement pas facile … Une fois arrivé en haut, vous voyez un petit couloir avec ce qui semble être des chambres sur les côtés. Aucune porte n’est grande ouverte, mais on ne dirait pas qu’une seule porte soit verrouillée.",
+	"buttons":[{"go":"upstair_room_check", "desc":"Inspecter les chambres"}, {"go":"couloir_maison", "desc":"Descendre et aller vers le couloir"}],
+	"actions":[{}]},
+
+	{"name":"upstair_room_check",
+	"desc":"Vous passez de chambre en chambre. Toutes vides. Toutes à part une, et comme par hasard la dernière que vous regardez. Vous voyez un tas de cadavres à moitié décomposés. Si on avait été dans un film, vous auriez pu penser que c’étaient des zombies. Des zombies morts. Mais nous ne sommes pas dans un film, si ?",
+	"buttons":[{"go":"couloir_maison", "desc":"Descendre et aller voir de l’autre côté du salon"}],
+	"actions":[{}]},
+
+	{"name":"couloir_maison",
+	"desc":"Vous avancez dans le couloir sans lumière. Le soleil se couche peu à peu et vous n’y voyez presque plus rien. Cependant vous voyez une silhouette passer une porte et la claquer derrière elle. Votre instinct vous dit de la suivre. Vous vous retrouvez en haut des escaliers qui semblent mener à une cave.",
+	"buttons":[{"go":"cave_inside", "desc":"Descendre à la cave"}],
+	"actions":[{}]},
+
+	{"name":"trap_open",
+	"desc":"Vous vous baissez pour essayer d’enlever le piège qui bloque votre jambe. Vous remarquez que bizarrement, cela ne fait pas si mal que ça. Il n’y a que quelques gouttes de sang qui perlent de votre muscle. Et ce sang n’est pas rouge, mais noir. Quelque chose ne va pas … Malgré tous vos efforts, impossible de vous libérer.",
+	"buttons":[{"go":"trap_wait", "desc":"Attendre"}],
+	"actions":[{}]},
+
+	{"name":"trap_wait",
+	"desc":"Vous attendez, le pied toujours coincé dans le piège. Vous attendez longtemps. Et la nuit commence à tomber. Au soleil couchant, vous entendez des bruits de moteur et voyez des phares se rapprocher de vous. Vous entendez quelqu’un crier haut et fort, mais impossible de discerner ce qu’il dit.",
+	"buttons":[{"go":"trap_hide", "desc":"S’accroupir pour se cacher"}, {"go":"trap_call", "desc":"Agiter les bras pour appeller à l’aide"}],
+	"actions":[{}]},
+
+	{"name":"trap_hide",
+	"desc":"Vous vous baissez pour vous cacher parmis les herbes et attendez. Les voitures se rapprochent. Vous voyez que ce sont en réalité des jeeps remplies de gens en treillis militaires, et armés jusqu’aux dents. Ils ont l’air à la fois très remontés, mais surtout ils ont l’air de chercher quelqu’un. Vous entendez l’un d’eux parler : “Allez les gars ! On va chasser ce bouffeur de cerveaux !”",
+	"buttons":[{"go":"trap_wait_call", "desc":"Les appeler"}, {"go":"trap_wait_bis", "desc":"Rester caché"}],
+	"actions":[{}]},
+
+	{"name":"trap_call",
+	"desc":"Les voitures se rapprochent et vous restez debout en agitant les bras pour qu’ils viennent vous aider. Vous voyez que ce sont en réalité des jeeps remplies de gens en treillis militaires, et armés jusqu’aux dents. Ils ont l’air à la fois très remontés, mais surtout ils ont l’air de chercher quelqu’un. Lorsqu’ils vous remarquent, les jeeps semblent accélérer, vous êtes à présent leur destination. Et les balles se mettent à pleuvoir dans votre direction. Plusieurs vous touchent sans pour autant vous faire de mal. Vous voyez l’une d’elle arriver droit vers votre front. L’impact est violent. Vous venez de mourir.",
+	"buttons":[{"go":"intro", "desc":"Recommencer"}],
+	"actions":[{"name":"death"}]}
 ],
 
 "start_life":1}
