@@ -58,6 +58,21 @@
 	"desc":"Vous sautez dans la grange, et franchement, vous vous faites bien mal aux jambes … C’est quand même balot d’avoir voulu monter là haut. Autour de vous, vous voyez des cochons, des vaches, des poulets. Toute une étable au final. Votre ventre gargouille encore un peu. Mais cette fois, vous avez le choix.",
 	"buttons":[{"go":"grange_eat", "desc":"Manger des animaux"}, {"go":"goto_maison", "desc":"Sortir et aller vers la maison"}, {"go":"grange_sieste", "desc":"Faire une sieste dans la paille"}],
 	"actions":[{"name":"hit"}]},
+
+	{"name":"grange_inside",
+	"desc":"Vous entrez prudemment dans la grange. Autour de vous, vous voyez des cochons, des vaches, des poulets. Toute une étable au final. Votre ventre gargouille un peu. Ces poulets, vaches et autres sont très tentants … Vous en prendriez bien un morceau, non ?",
+	"buttons":[{"go":"grange_eat", "desc":"Manger des animaux"}, {"go":"goto_maison", "desc":"Sortir et aller vers la maison"}],
+	"actions":[{}]},
+
+	{"name":"grange_eat",
+	"desc":"Avec une force assez incroyable, et une vélocité un peu hors du commun vous vous attrapez un poulet qui passait par là et lui arrachez le cou d’une torsion de poignet. Le sang afflue et vous ne pouvez vous empêcher de l’éponger avec votre bouche. Vous commencez alors à dévorer la bête. Une fois votre repas fini, vous jetez la carcasse plumée de côté. Il n’y a rien d’intéressant par ici. Peut être que la maison offrira d’autres perspectives plus intéressantes.",
+	"buttons":[{"go":"goto_maison", "desc":"Aller vers la maison"}],
+	"actions":[{"name":"heal"}]},
+
+	{"name":"goto_maison",
+	"desc":"Vous vous approchez de la chaumière. C’est sans doute le fermier qui vit là. Ou plutôt vivait. La maison est totalement en ruine. Il manque une tuile sur deux au minimum, la plupart des fenêtres sont brisées, le crépis jonche le sol … Et je ne vous parlerez même pas du jardin si bien … Entretenu. ",
+	"buttons":[{"go":"inside_maison", "desc":"Rentrer dans la maison"}, {"go":"inside_back_maison", "desc":"Contourner la maison"}, {"go":"check_maison", "desc":"Regarder à l'intérieur depuis une fenêtre"}],
+	"actions":[{}]}
 ],
 
 "start_life":1}
