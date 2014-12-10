@@ -1,13 +1,48 @@
+html{height:100%}
+
+* {
+box-sizing: border-box;
+}
+
 body {
-	font-size : 13pt;
-	font-family : "Trebuchet MS", Arial, sans-serif;
+    height:100%;
+    width:100%;
+    position: absolute;
+    top:0px;
 }
 
-h2 {
-	margin-top : 0px;
-	font-weight : bold;
+
+/*-------------Menu de départ-------------*/
+.menu {
+	padding : 10px;
+	margin : auto;
+	margin-top : 100px;
+	max-width : 600px;
+	border : 1px solid lightGray;
+    width:50%;
 }
 
+.menu button {
+	display : block;
+	width : 100%;
+	color : black;
+	text-decoration : none;
+	padding : 20px;
+	margin-top : 30px;
+	background : lightGray;
+	border : none;
+	cursor : pointer;
+}
+
+
+
+.menu button:hover::before, .menu button:hover::after{
+content:"*";
+}
+
+
+
+/*---------------Barre de statut-------------*/
 #status {
 	position : absolute;
 	top : 0px;
@@ -27,14 +62,21 @@ h2 {
 	border-left : none;
 }
 
+
+
+/*--------------Menus en jeux---------------*/
 .section {
+    position:absolute;
+    bottom:0px;
 	padding : 10px;
-	margin : auto;
+	margin : none;
 	margin-top : 100px;
-	max-width : 600px;
+	width : 100%;
 	border : 1px solid lightGray;
 }
+
 .section#intro {
+    position: relative;
 	display : block;
 }
 .section button {
@@ -57,53 +99,8 @@ h2 {
 	background-color : black;
 }
 
-.battle {
-	padding : 10px 10px;
-	margin : 20px 0px;
-	box-shadow : 0px 2px 8px gray;
-}
 
-.menu {
-	padding : 10px;
-	margin : auto;
-	margin-top : 100px;
-	max-width : 600px;
-	border : 1px solid lightGray;
-}
-
-.menu button {
-	display : block;
-	width : 100%;
-	color : black;
-	text-decoration : none;
-	padding : 5px;
-	margin-top : 30px;
-	background : lightGray;
-	border : none;
-	cursor : pointer;
-}
-
-.menu button:hover {
-	color : lightGray;
-	background-color : black;
-}
-
-#inventory {
-	float: left;
-	width: 200px;
-	height: 500px; 
-	border : 1px solid lightGray;
-	padding: 10px;
-}
-
-.credits {
-	padding : 10px;
-	margin : auto;
-	margin-top : 100px;
-	max-width : 600px;
-	border : 1px solid lightGray;
-}
-
+/*---------------Sélection de jeux-------------*/
 #select-game {
 	padding : 10px;
 	margin : auto;
@@ -127,4 +124,28 @@ h2 {
 #select-game button:hover {
 	color : lightGray;
 	background-color : black;
+}
+
+
+/*----------------------Autres------------------*/
+.battle {
+	padding : 10px 10px;
+	margin : 20px 0px;
+	box-shadow : 0px 2px 8px gray;
+}
+
+#inventory {
+	float: left;
+	width: 200px;
+	height: 500px; 
+	border : 1px solid lightGray;
+	padding: 10px;
+}
+
+.credits {
+	padding : 10px;
+	margin : auto;
+	margin-top : 100px;
+	max-width : 600px;
+	border : 1px solid lightGray;
 }
