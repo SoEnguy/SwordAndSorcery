@@ -12,9 +12,10 @@ $( function() {
     * parameter key Nom de la page à laquelle aller
     */
     function gotoSection(key) {
+        if (getLife() == 0) { endGame(); }
         localStorage.setItem("scene", key);
         localStorage.setItem("life", getLife());
-        $(".game div.section").not("#"+key).hide();
+        $(".game div.section:visible").not("#"+key).hide();
         $(".game #"+key).show();
     }
 
@@ -31,6 +32,7 @@ $( function() {
                 break;
             case 'heal' :
                 getOneLife();
+                break;
             default :
                 break;
         }
@@ -62,12 +64,7 @@ $( function() {
     * Fait perdre 1 vie au joueur
     **/
     function loseOneLife() {
-        if (getLife() == 1) {
-            setLife(getLife()-1);
-            endGame();
-        } else {
             setLife(parseInt(getLife())-1);
-        }
     }
 
     function getOneLife() {
@@ -127,18 +124,6 @@ $( function() {
         startGame(json.start_life);
     }
 
-    function generateInventory(){
-        var table = $("#inventory table");
-
-        for (var i = 0; i < 5 ; i++) {
-            var newline = $("<tr></tr>");
-            for (var j = 0; j < 5; j++) {
-                newline.append("<td>X</td>");
-            }
-            table.append(newline);
-        }
-    }
-
     function begin(game, callback) {
         $.getJSON(game+".json", function(data){
             generateGame(data);
@@ -160,24 +145,24 @@ $( function() {
         
         switch(key) {
             case 'game' :
-                $(".menu").slideUp(2000, function() {
-                    $(".game #select-game").slideDown(2000); 
+                $(".menu").slideUp(1000, function() {
+                    $(".game #select-game").slideDown(1000); 
                 });
                 break;
             case 'load' :
                 var scene = localStorage.getItem("scene");
                 var hp = localStorage.getItem("life");
 
-                $(".menu").slideUp(2000, function() {
+                $(".menu").slideUp(1000, function() {
                     begin(function(){
-                        $(".game #"+scene).slideDown(2000);
+                        $(".game #"+scene).slideDown(1000);
                         setLife(hp);
                     });
                 });
                 break;
             case 'credits' :
-                $(".menu").slideUp(2000, function() {
-                    $(".credits").slideDown(2000); 
+                $(".menu").slideUp(1000, function() {
+                    $(".credits").slideDown(1000); 
                 });
                 break;
         }
@@ -187,16 +172,16 @@ $( function() {
         var key = $(event.target).attr("play");
         switch(key) {
             case 'base' :
-                $("#select-game").slideUp(2000, function() {
+                $("#select-game").slideUp(1000, function() {
                     begin("game", function(){
-                        $(".game #intro").slideDown(2000); 
+                        $(".game #intro").slideDown(1000); 
                     });
                 });
                 break
             case 'zombie':
-                $("#select-game").slideUp(2000, function() {
+                $("#select-game").slideUp(1000, function() {
                     begin("zombie", function(){
-                        $(".game #intro").slideDown(2000); 
+                        $(".game #intro").slideDown(1000); 
                     });
                 });
                 break;
@@ -206,6 +191,7 @@ $( function() {
     $(".game div.section").not("#intro").hide();
     $(".credits").hide();
     $(".game #select-game").hide();
+
     status.hide();
     generateInventory();
 } );
