@@ -3,7 +3,9 @@ $( function() {
     //CODE JEU
     var buttons,
         status = $(".game #status"),
-        life;
+        life,
+        hungerActivated = false,
+        hungerLevel = 0;
 
     /**
     * goToSection
@@ -17,6 +19,7 @@ $( function() {
         localStorage.setItem("life", getLife());
         $(".game div.section:visible").not("#"+key).hide();
         $(".game #"+key).show();
+        hungerLevel--;
     }
 
     function doAction(key) {
@@ -35,6 +38,9 @@ $( function() {
                 break;
             case 'death' :
                 setLife(0);
+                break;
+            case 'feed':
+                hungerLevel +=10;
                 break;
             default :
                 break;
@@ -123,6 +129,11 @@ $( function() {
 	            }
 	        }
             $('div.game').append(gameBox);
+
+        }
+        hungerActivated = json.hunger;
+        if (hungerActivated) {
+            hungerLevel = json.hunger_level;
         }
         startGame(json.start_life);
     }
@@ -202,5 +213,4 @@ $( function() {
     $(".game #select-game").hide();
 
     status.hide();
-    generateInventory();
 } );

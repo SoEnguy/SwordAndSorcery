@@ -1,4 +1,4 @@
-{"ph	ases": [
+{"phases": [
 	{"name":"death", 
 	"desc":"Et voilà, vous êtes mort ... C'est dommage mais bon, c'est la vie ... Enfin, non, du coup c'est la mort. Bref. Vous m'avez compris.", 
 	"buttons" : [{"go":"intro", "desc":"Recommencer"}], 
@@ -125,4 +125,6 @@
 	"actions":[{"name":"death"}]}
 ],
 
-"start_life":1}
+"start_life": 1,
+"hunger": true,
+"hunger_level": 10}
