@@ -1,0 +1,248 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../var/lib/gems/1.9.1/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/_menu.scss */
+.menu button, #select-game button {
+  font-size: 12pt;
+  display: block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* line 11, ../sass/_menu.scss */
+.menu button:hover, #select-game button:hover {
+  color: red;
+}
+
+/* line 16, ../sass/_menu.scss */
+.menu, #select-game {
+  padding: 10px;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 600px;
+  background: white;
+  /*border : 1px solid lightGray;*/
+  width: 50%;
+  border: 3px dashed grey;
+}
+/* line 25, ../sass/_menu.scss */
+.menu h1, #select-game h1 {
+  margin-bottom: 1em;
+}
+
+/* line 1, ../sass/_sections.scss */
+.section {
+  position: absolute;
+  bottom: 0px;
+  padding: 40px;
+  margin: none;
+  color: #e6e6e6;
+  margin-top: 100px;
+  width: 100%;
+  border: 5px dashed #3c3c3c;
+  font-size: 12pt;
+  background-color: #951616;
+}
+
+/* line 14, ../sass/_sections.scss */
+.section p {
+  font-size: 15pt;
+}
+
+/* line 18, ../sass/_sections.scss */
+.section#intro {
+  position: relative;
+  display: block;
+  width: 500px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(/images/intro.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left top;
+}
+/* line 29, ../sass/_sections.scss */
+.section#intro button {
+  position: absolute;
+  bottom: 0px;
+  font-size: 20pt;
+}
+
+/* line 37, ../sass/_sections.scss */
+.section button {
+  list-style: decimal;
+  display: block;
+  color: #d8d8d8;
+  font-size: 12pt;
+  text-align: left;
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 30px;
+  background: none;
+  border: none;
+}
+
+/* line 51, ../sass/_sections.scss */
+.section button + button {
+  margin-top: 10px;
+}
+
+/* line 55, ../sass/_sections.scss */
+.section button:hover {
+  color: red;
+}
+
+/* line 1, ../sass/_statusbar.scss */
+#status {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  text-align: right;
+  border: 5px dashed #3c3c3c;
+  background-color: #951616;
+}
+/* line 8, ../sass/_statusbar.scss */
+#status div {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #e5e5e5;
+  border-left: 1px solid lightGray;
+  border-right: 1px solid lightGray;
+}
+/* line 15, ../sass/_statusbar.scss */
+#status div + div {
+  border-left: none;
+}
+
+/* line 1, ../sass/_typography.scss */
+html * {
+  /*font-size : 13pt;*/
+  font-family: 'uni_05_53regular', "andale mono", "courier new", monospace;
+}
+
+/* line 6, ../sass/_typography.scss */
+h1 {
+  font-size: 30pt;
+  color: #cb1313;
+}
+
+/* line 11, ../sass/_typography.scss */
+h2 {
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+/* line 15, ../sass/app.scss */
+html {
+  height: 100%;
+}
+
+/* line 17, ../sass/app.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 21, ../sass/app.scss */
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background-image: url(/images/background.png);
+}
+
+/* line 30, ../sass/app.scss */
+.battle {
+  padding: 10px 10px;
+  margin: 20px 0px;
+  box-shadow: 0px 2px 8px gray;
+}
+
+/* line 36, ../sass/app.scss */
+#inventory {
+  float: left;
+  width: 200px;
+  height: 500px;
+  border: 1px solid lightGray;
+  padding: 10px;
+}
+
+/* line 44, ../sass/app.scss */
+.credits {
+  padding: 10px;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 600px;
+  border: 1px solid lightGray;
+}

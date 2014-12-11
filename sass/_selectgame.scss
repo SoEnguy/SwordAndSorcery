@@ -1,0 +1,10 @@
+@import "menu";
+    
+#select-game {
+	@extend %menu;
+}
+
+#select-game button {
+	@extend %button;
+}
+

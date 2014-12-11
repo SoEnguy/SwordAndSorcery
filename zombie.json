@@ -5,10 +5,15 @@
 	"actions":[{}]},
 
 	{"name":"intro", 
+	"desc":"", 
+	"buttons" : [{"go":"debut", "desc":"Lancer la partie"}], 
+	"actions":[{"name":"start"}]},
+    
+    {"name":"debut", 
 	"desc":"Vous vous réveillez au milieu d’un laboratoire en ruine, avec un gout de chair humaine en bouche  (ne me demandez pas comment vous savez que ce n’est pas du boeuf ou du poulet). Vous êtes totalement seul et il fait jour dehors.", 
 	"buttons" : [{"go":"fouiller_labo", "desc":"Fouiller le laboratoire"}, {"go":"call_labo", "desc":"Appeler à l’aide"}, {"go":"exit_labo", "desc":"Chercher la sortie"}], 
-	"actions":[{"name":"start"}]},
-
+	"actions":[{}]},
+    
 	{"name":"fouiller_labo",
 	"desc":"Vous ne trouvez à priori rien d’utile, ou en tout cas rien que vous ne comprenez. Ca parle de protozoaires, de mollécules acidioxyméthichlorodique, et de clonage humain. Rien d’intéressant en somme.",
 	"buttons":[{"go":"clonage_labo", "desc":"Wait what? Clonage humain?"}, {"go":"call_labo", "desc":"Appeler à l'aide"}, {"go":"exit_labo", "desc":"Chercher la sortie"}],

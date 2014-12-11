@@ -186,6 +186,14 @@ $( function() {
                 break;
         }
     })
+    
+    $("button").hover(
+    function(){
+        $(this).prepend($('<img src="hand.png">'));
+    }, function(){
+        $(this).find("img:first").remove();
+    }
+    );
 
     $("#select-game button").click(function(event){
         var key = $(event.target).attr("play");
