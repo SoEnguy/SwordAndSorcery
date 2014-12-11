@@ -25,7 +25,7 @@ $( function() {
 
                 var bg = $(".game #"+key).find("bg").attr("value");
                 
-                $("body").css('background', 'url(images/'+ bg + '.png)');         
+                $("body").css('background-image', 'url(images/'+ bg + '.png)');         
             }    
         }
     }

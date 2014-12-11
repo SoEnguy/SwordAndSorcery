@@ -104,7 +104,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .section {
   position: absolute;
   bottom: 0px;
-  padding: 40px;
+  padding: 20px;
   margin: none;
   color: #e6e6e6;
   margin-top: 100px;
@@ -223,16 +223,20 @@ body {
   position: absolute;
   top: 0px;
   background-image: url(/images/background.png);
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  background-position: left top;
+  background-color: black;
 }
 
-/* line 30, ../sass/app.scss */
+/* line 34, ../sass/app.scss */
 .battle {
   padding: 10px 10px;
   margin: 20px 0px;
   box-shadow: 0px 2px 8px gray;
 }
 
-/* line 36, ../sass/app.scss */
+/* line 40, ../sass/app.scss */
 #inventory {
   float: left;
   width: 200px;
@@ -241,7 +245,7 @@ body {
   padding: 10px;
 }
 
-/* line 44, ../sass/app.scss */
+/* line 48, ../sass/app.scss */
 .credits {
   padding: 10px;
   margin: auto;
