@@ -17,9 +17,14 @@ $( function() {
         if (getLife() == 0) { endGame(); }
         localStorage.setItem("scene", key);
         localStorage.setItem("life", getLife());
+        setHunger(hungerLevel-1);
+        localStorage.setItem("hunger", getHunger());
         $(".game div.section:visible").not("#"+key).hide();
         $(".game #"+key).show();
-        setHunger(hungerLevel-1);
+
+        var bg = $(".game #"+key).find("bg").attr("value");
+        
+        $("body").css('background', 'url(images/'+ bg + '.png)');
     }
 
     function doAction(key) {
@@ -143,6 +148,9 @@ $( function() {
                     gameBox.append(button);
 	            }
 	        }
+
+            gameBox.append($("<bg value='"+json.phases[i].background+"'/>"))
+
             $('div.game').append(gameBox);
 
         }
