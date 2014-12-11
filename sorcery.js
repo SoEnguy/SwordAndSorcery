@@ -23,8 +23,8 @@ $( function() {
         $(".game #"+key).show();
 
         var bg = $(".game #"+key).find("bg").attr("value");
-
-        $("body").css('background-image', 'url("/images/'+ bg + '"');
+        
+        $("body").css('background', 'url(images/'+ bg + '.png)');
     }
 
     function doAction(key) {
