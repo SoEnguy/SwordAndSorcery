@@ -127,7 +127,43 @@
 	{"name":"trap_call",
 	"desc":"Les voitures se rapprochent et vous restez debout en agitant les bras pour qu’ils viennent vous aider. Vous voyez que ce sont en réalité des jeeps remplies de gens en treillis militaires, et armés jusqu’aux dents. Ils ont l’air à la fois très remontés, mais surtout ils ont l’air de chercher quelqu’un. Lorsqu’ils vous remarquent, les jeeps semblent accélérer, vous êtes à présent leur destination. Et les balles se mettent à pleuvoir dans votre direction. Plusieurs vous touchent sans pour autant vous faire de mal. Vous voyez l’une d’elle arriver droit vers votre front. L’impact est violent. Vous venez de mourir.",
 	"buttons":[{"go":"intro", "desc":"Recommencer"}],
-	"actions":[{"name":"death"}]}
+	"actions":[{"name":"death"}]},
+
+	{"name":"trap_wait_bis",
+	"desc":"Vous patientez encore un peu, mais ces hommes armés jusqu’aux dents se rapprochent de vous. Soudain, vous sentez que votre pied est libéré. Il fait sombre, vous ne voyez pas bien de ce côté ci, mais vous voyez une silhouette humaine qui vient de vous libérer et qui vous fait signe de la suivre.",
+	"buttons":[{"go":"trap_follow", "desc":"La suivre"}, {"go":"trap_suicide", "desc":"Fuir vers les hommes armés"}],
+	"actions":[{}]},
+
+	{"name":"cave_inside",
+	"desc":"Vous entrez dans la cave. En plein milieu des cartons éclatés se tient une silhouette humaine. Il n’y a pas beaucoup de lumière, et pourtant vous discernez que ce n’est pas un humain qui vous parle. “T’es nouveau toi, non ? T’as pas encore perdu la moitié de ta peau. T’inquiètes pas, ça viendra.”",
+	"buttons":[{"go":"cave_who", "desc":"Qui êtes vous ?"}, {"go":"cave_skin", "desc":"Comment ça ma peau ?"}],
+	"actions":[{}]},
+
+	{"name":"trap_suicide",
+	"desc":"Vous vous écartez de la silhouette et foncez vers les hommes armés. Ceux ci ne semblent pas aussi sympathiques que la personne qui vous a libéré au final … Dès qu’ils vous voient ils commencent à vous tirer dessus. Une balle touche votre tête et vous ne voyez plus que du noir. Vous êtes mort.",
+	"buttons":[{"go":"intro", "desc":"Recommencer"}],
+	"actions":[{"name":"death"}]},
+
+	{"name":"trap_follow",
+	"desc":"Vous suivez la silhouette le long du mur, toujours accroupi pour échapper aux chasseurs. Vous arrivez près d’une fenêtre qui donne sur la cave. Vous voyez votre sauveur inconnu s’y glisser. Il émane de lui une odeur de mort et pourtant, vous lui faites naturellement confiance.",
+	"buttons":[{"go":"cave_inside", "desc":"Se glisser dans la cave"}],
+	"actions":[{}]},
+
+	{"name":"trap_wait_call",
+	"desc":"Les gens armés se rapprochent peu à peu de vous. Dès qu’ils semblent être suffisament près, vous vous levez le plus que vous pouvez et agitez les bras. Ils viennent immédiatement sur vous ! Quelle chance ! Ils commencent à vous tirer dessus ! Pas de chance ! Une balle vous touche à la tête, vous êtes mort ! C’est balot.",
+	"buttons":[{"go":"intro", "desc":"Recommencer"}],
+	"actions":[{"name":"death"}]},
+
+	{"name":"cave_who",
+	"desc":"La silhouette se rapproche un peu de vous, vous discernez maintenant son visage ravagé. Des bouts de peau manquent par ci par là, et on peut même discerner l’os du crâne à certains endroits tellement le muscle est fin, voire inexistant. “Pardon gamin, j’ai oublié de me présenter. John “Lagoule” Smith. J’suis un zombie. Tout comme toi.”",
+	"buttons":[{"go":"cave_im_zombie", "desc":"Je suis un zombie ?"}, {"go":"cave_fight", "desc":"CREVE ENTITE DEMONIAQUE !"}, {"go":"cave_no_zombie", "desc":"Mais ça n’existe pas les zombies !"}],
+	"actions":[{}]},
+
+	{"name":"cave_skin",
+	"desc":"La silhouette se rapproche un peu de vous, vous discernez maintenant son visage ravagé. Des bouts de peau manquent par ci par là, et on peut même discerner l’os du crâne à certains endroits tellement le muscle est fin, voire inexistant. “Ouais gamin, ça va te faire comme à moi d’ici quelques jours. Ta peau va demander, on compte en gros 50% de perte, et t’as certains muscles qui vont aussi se mettre à fondre. Pourtant tu seras plus fort que jamais. Au fait, j’ai oublié de me présenter, moi c’est John “Lagoule” Smith. J’suis un zombie. Tout comme toi.”",
+	"buttons":[{"go":"cave_im_zombie", "desc":"Je suis un zombie ?"}, {"go":"cave_fight", "desc":"CREVE ENTITE DEMONIAQUE !"}, {"go":"cave_no_zombie", "desc":"Mais ça n’existe pas les zombies !"}],
+	"actions":[{}]}	
+
 ],
 
 "start_life": 1,
