@@ -19,7 +19,7 @@ $( function() {
         localStorage.setItem("life", getLife());
         $(".game div.section:visible").not("#"+key).hide();
         $(".game #"+key).show();
-        hungerLevel--;
+        setHunger(hungerLevel-1);
     }
 
     function doAction(key) {
@@ -40,7 +40,7 @@ $( function() {
                 setLife(0);
                 break;
             case 'feed':
-                hungerLevel +=10;
+                setHunger(hungerLevel +=10);
                 break;
             case 'talk':
                 hungerLevel +=1;
@@ -77,7 +77,7 @@ $( function() {
     
     function setHunger(v) {
         hungerLevel = v;
-        status.find(".hunger span").text(life);
+        status.find(".hunger span").text(hungerLevel);
     }
 
     /**
@@ -85,7 +85,7 @@ $( function() {
     * Fait perdre 1 vie au joueur
     **/
     function loseOneLife() {
-            setLife(parseInt(getLife())-1);
+        setLife(parseInt(getLife())-1);
     }
 
     function getOneLife() {
@@ -99,6 +99,9 @@ $( function() {
     function startGame(hp) {
         status.show();
         setLife(hp);
+        if(hungerActivated) {
+            setHunger(10);
+        }
     }
     
     /**
@@ -167,7 +170,10 @@ $( function() {
                 var goTo = $(event.target).attr("go");
                 gotoSection(goTo);
                 if($('.game #'+goTo).find('action').attr('name') != undefined ) {
-                    doAction($('#'+goTo).find('action').attr('name'));
+                    $('#'+goTo).find('action').each(function(i, elem){
+                        doAction($(this).attr('name'));
+                    });
+                    
                 }
             });
             callback();
@@ -209,8 +215,6 @@ $( function() {
                 break;
         }
     })
-    
-    
 
     $("#select-game button").click(function(event){
         var key = $(event.target).attr("play");

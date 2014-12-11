@@ -57,7 +57,7 @@
 	{"name":"grange_up_fouiller",
 	"desc":"Vous remuez la paille en haut de la grange, tout ça pour découvrir … Pas grand chose. Vous voyez un poulet mort. Cela ne fait pas bien longtemps. Vous avez vraiment très faim … Vraiment très faim. Sans pouvoir vous contrôler, vous dévorez les entrailles du poulet (franchement c’est pas beau à voir). Bizarrement, ça vous redonne des forces. Descendre l’échelle serait faire demi-tour, il ne vous reste plus qu’à aller dans la grange.",
 	"buttons":[{"go":"grange_inside_jump", "desc":"Sauter dans la grange"}],
-	"actions":[{"name":"heal"}]},
+	"actions":[{"name":"heal"}, {"name":"feed"}]},
 
 	{"name":"grange_inside_jump",
 	"desc":"Vous sautez dans la grange, et franchement, vous vous faites bien mal aux jambes … C’est quand même balot d’avoir voulu monter là haut. Autour de vous, vous voyez des cochons, des vaches, des poulets. Toute une étable au final. Votre ventre gargouille encore un peu. Mais cette fois, vous avez le choix.",
@@ -72,7 +72,7 @@
 	{"name":"grange_eat",
 	"desc":"Avec une force assez incroyable, et une vélocité un peu hors du commun vous vous attrapez un poulet qui passait par là et lui arrachez le cou d’une torsion de poignet. Le sang afflue et vous ne pouvez vous empêcher de l’éponger avec votre bouche. Vous commencez alors à dévorer la bête. Une fois votre repas fini, vous jetez la carcasse plumée de côté. Il n’y a rien d’intéressant par ici. Peut être que la maison offrira d’autres perspectives plus intéressantes.",
 	"buttons":[{"go":"goto_maison", "desc":"Aller vers la maison"}],
-	"actions":[{"name":"heal"}]},
+	"actions":[{"name":"heal"}, {"name":"feed"}]},
 
 	{"name":"goto_maison",
 	"desc":"Vous vous approchez de la chaumière. C’est sans doute le fermier qui vit là. Ou plutôt vivait. La maison est totalement en ruine. Il manque une tuile sur deux au minimum, la plupart des fenêtres sont brisées, le crépis jonche le sol … Et je ne vous parlerez même pas du jardin si bien … Entretenu. ",
@@ -162,7 +162,7 @@
 	{"name":"cave_skin",
 	"desc":"La silhouette se rapproche un peu de vous, vous discernez maintenant son visage ravagé. Des bouts de peau manquent par ci par là, et on peut même discerner l’os du crâne à certains endroits tellement le muscle est fin, voire inexistant. “Ouais gamin, ça va te faire comme à moi d’ici quelques jours. Ta peau va demander, on compte en gros 50% de perte, et t’as certains muscles qui vont aussi se mettre à fondre. Pourtant tu seras plus fort que jamais. Au fait, j’ai oublié de me présenter, moi c’est John “Lagoule” Smith. J’suis un zombie. Tout comme toi.”",
 	"buttons":[{"go":"cave_im_zombie", "desc":"Je suis un zombie ?"}, {"go":"cave_fight", "desc":"CREVE ENTITE DEMONIAQUE !"}, {"go":"cave_no_zombie", "desc":"Mais ça n’existe pas les zombies !"}],
-	"actions":[{}]}	
+	"actions":[{"name":"talk"}]}	
 
 ],
 
