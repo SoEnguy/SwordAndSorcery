@@ -60,6 +60,10 @@ $( function() {
         return life;
     }
 
+    function getHunger(){
+        return hungerLevel;
+    }
+
     /**
     * setLife
     * Permet de changer la vie du joueur
@@ -68,12 +72,12 @@ $( function() {
     **/
     function setLife(v) {
         life = v;
-        status.find("span").text(life);
+        status.find(".life span").text(life);
     }
     
     function setHunger(v) {
         hungerLevel = v;
-        status.find("span").text(life);
+        status.find(".hunger span").text(life);
     }
 
     /**
@@ -143,6 +147,15 @@ $( function() {
         if (hungerActivated) {
             hungerLevel = json.hunger_level;
         }
+
+        $(".section button").hover(
+            function(){
+                $(this).prepend($('<img src="hand.png">'));
+            }, function(){
+                $(this).find("img:first").remove();
+            }
+        );
+
         startGame(json.start_life);
     }
 
@@ -197,13 +210,7 @@ $( function() {
         }
     })
     
-    $("button").hover(
-    function(){
-        $(this).prepend($('<img src="hand.png">'));
-    }, function(){
-        $(this).find("img:first").remove();
-    }
-    );
+    
 
     $("#select-game button").click(function(event){
         var key = $(event.target).attr("play");
@@ -224,6 +231,14 @@ $( function() {
                 break;
         }
     });
+
+    $("button").hover(
+        function(){
+            $(this).prepend($('<img src="hand.png">'));
+        }, function(){
+            $(this).find("img:first").remove();
+        }
+    );
 
     $(".game div.section").not("#intro").hide();
     $(".create-game").hide();
