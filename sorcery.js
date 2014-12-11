@@ -244,7 +244,7 @@ $( function() {
 
     $("button").hover(
         function(){
-            $(this).prepend($('<img src="hand.png">'));
+            $(this).prepend($('<img src="pac1.gif">'));
         }, function(){
             $(this).find("img:first").remove();
         }

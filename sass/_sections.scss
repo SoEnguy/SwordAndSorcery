@@ -7,7 +7,7 @@
 	margin-top : 100px;
 	width : 100%;
 	border : 5px dashed #3c3c3c;
-    font-size: 12pt;
+    font-size: 14pt;
     background-color:#951616;
 }
 
@@ -30,13 +30,14 @@
     position:absolute;
     bottom:0px;
     font-size:20pt;
+    height:45px;
+    left: 0px;
     }
 }
 
 
 .section button {
     
-    list-style: decimal;
 	display : block;
 	color : #d8d8d8;
     font-size:12pt;
@@ -46,6 +47,8 @@
 	margin-top : 30px;
     background:none;
 	border : none;
+    height:30px;
+    width:100%;
 }
 
 .section button+button  {
