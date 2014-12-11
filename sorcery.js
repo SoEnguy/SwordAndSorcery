@@ -42,6 +42,9 @@ $( function() {
             case 'feed':
                 hungerLevel +=10;
                 break;
+            case 'talk':
+                hungerLevel +=1;
+                break;
             default :
                 break;
         }
@@ -68,6 +71,11 @@ $( function() {
         status.find("span").text(life);
     }
     
+    function setHunger(v) {
+        hungerLevel = v;
+        status.find("span").text(life);
+    }
+
     /**
     * loseOneLife
     * Fait perdre 1 vie au joueur
@@ -166,11 +174,13 @@ $( function() {
             case 'load' :
                 var scene = localStorage.getItem("scene");
                 var hp = localStorage.getItem("life");
+                var hunger = localStorage.getItem("life");
 
                 $(".menu").slideUp(1000, function() {
                     begin(function(){
                         $(".game #"+scene).slideDown(1000);
                         setLife(hp);
+                        setHunger(hunger);
                     });
                 });
                 break;

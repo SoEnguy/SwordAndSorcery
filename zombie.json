@@ -152,7 +152,7 @@
 	{"name":"cave_who",
 	"desc":"La silhouette se rapproche un peu de vous, vous discernez maintenant son visage ravagé. Des bouts de peau manquent par ci par là, et on peut même discerner l’os du crâne à certains endroits tellement le muscle est fin, voire inexistant. “Pardon gamin, j’ai oublié de me présenter. John “Lagoule” Smith. J’suis un zombie. Tout comme toi.”",
 	"buttons":[{"go":"cave_im_zombie", "desc":"Je suis un zombie ?"}, {"go":"cave_fight", "desc":"CREVE ENTITE DEMONIAQUE !"}, {"go":"cave_no_zombie", "desc":"Mais ça n’existe pas les zombies !"}],
-	"actions":[{}]},
+	"actions":[{"name":"talk"}]},
 
 	{"name":"cave_skin",
 	"desc":"La silhouette se rapproche un peu de vous, vous discernez maintenant son visage ravagé. Des bouts de peau manquent par ci par là, et on peut même discerner l’os du crâne à certains endroits tellement le muscle est fin, voire inexistant. “Ouais gamin, ça va te faire comme à moi d’ici quelques jours. Ta peau va demander, on compte en gros 50% de perte, et t’as certains muscles qui vont aussi se mettre à fondre. Pourtant tu seras plus fort que jamais. Au fait, j’ai oublié de me présenter, moi c’est John “Lagoule” Smith. J’suis un zombie. Tout comme toi.”",
