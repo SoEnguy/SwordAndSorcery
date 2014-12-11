@@ -1,7 +1,13 @@
 {"phases": [
 	{"name":"death", 
 	"desc":"Et voilà, vous êtes mort ... C'est dommage mais bon, c'est la vie ... Enfin, non, du coup c'est la mort. Bref. Vous m'avez compris.", 
-	"buttons" : [{"go":"intro", "desc":"Recommencer"}], 
+	"buttons" : [{"go":"intro", "desc":"Retour au menu"}], 
+	"actions":[{}],
+	"background":"death"},
+
+	{"name":"death-hunger", 
+	"desc":"Et voilà, vous êtes mort de faim ... C'est dommage mais bon, c'est la vie ... Enfin, non, du coup c'est la mort. Bref. Vous m'avez compris.", 
+	"buttons" : [{"go":"intro", "desc":"Retour au menu"}], 
 	"actions":[{}],
 	"background":"death"},
 
@@ -14,13 +20,13 @@
     {"name":"debut", 
 	"desc":"Vous vous réveillez au milieu d’un laboratoire en ruine, avec un gout de chair humaine en bouche  (ne me demandez pas comment vous savez que ce n’est pas du boeuf ou du poulet). Vous êtes totalement seul et il fait jour dehors.", 
 	"buttons" : [{"go":"fouiller_labo", "desc":"Fouiller le laboratoire"}, {"go":"call_labo", "desc":"Appeler à l’aide"}, {"go":"exit_labo", "desc":"Chercher la sortie"}], 
-	"actions":[{}],
+	"actions":[{"name":"talk"}],
 	"background":"labo"},
     
 	{"name":"fouiller_labo",
 	"desc":"Vous ne trouvez à priori rien d’utile, ou en tout cas rien que vous ne comprenez. Ca parle de protozoaires, de mollécules acidioxyméthichlorodique, et de clonage humain. Rien d’intéressant en somme.",
 	"buttons":[{"go":"clonage_labo", "desc":"Wait what? Clonage humain?"}, {"go":"call_labo", "desc":"Appeler à l'aide"}, {"go":"exit_labo", "desc":"Chercher la sortie"}],
-	"actions":[{}],
+	"actions":[{"name":"talk"}],
 	"background":"labo"},
 
 	{"name":"call_labo",
@@ -32,7 +38,7 @@
 	{"name":"clonage_labo",
 	"desc":"Non non, j’ai rien dit, c’est juste le scénariste qui s’est emporté. Et puis de toute façon, votre personnage ne comprend pas vraiment de quoi il s’agit. C’est pas parce que les résultats des tests parlaient d’échecs et de mutation bizarres que c’est forcément intéressant hein ...",
 	"buttons":[{"go":"mutation_labo", "desc":"Pardon ? Des mutations ?"}, {"go":"call_labo", "desc":"Appeler à l'aide"}, {"go":"exit_labo", "desc":"Chercher la sortie"}],
-	"actions":[{}],
+	"actions":[{"name":"talk"}],
 	"background":"labo"},
 
 	{"name":"exit_labo",
@@ -44,7 +50,7 @@
 	{"name":"mutation_labo",
 	"desc":"Oui bon, ok, ça parle d’expériences râtées qui ont créé des monstres et des trucs dans le genre. Mais rien qui semble vous concerner ne vous inquiétez pas.<br/><br/>Il va vraiment gober ça ?",
 	"buttons":[{"go":"exit_labo", "desc":"Chercher la sortie"}],
-	"actions":[{}],
+	"actions":[{"name":"talk"}],
 	"background":"labo"},
 
 	{"name":"labo_outside",

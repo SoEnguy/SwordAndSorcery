@@ -14,17 +14,20 @@ $( function() {
     * parameter key Nom de la page à laquelle aller
     */
     function gotoSection(key) {
-        if (getLife() == 0) { endGame(); }
-        localStorage.setItem("scene", key);
-        localStorage.setItem("life", getLife());
-        setHunger(hungerLevel-1);
-        localStorage.setItem("hunger", getHunger());
-        $(".game div.section:visible").not("#"+key).hide();
-        $(".game #"+key).show();
+        if (getLife() == 0) { endGame(); } else {
+            if (getHunger() == 0) { endGameHunger(); } else {
+                localStorage.setItem("scene", key);
+                localStorage.setItem("life", getLife());
+                setHunger(hungerLevel-1);
+                localStorage.setItem("hunger", getHunger());
+                $(".game div.section:visible").not("#"+key).hide();
+                $(".game #"+key).show();
 
-        var bg = $(".game #"+key).find("bg").attr("value");
-        
-        $("body").css('background', 'url(images/'+ bg + '.png)');
+                var bg = $(".game #"+key).find("bg").attr("value");
+                
+                $("body").css('background', 'url(images/'+ bg + '.png)');         
+            }    
+        }
     }
 
     function doAction(key) {
@@ -45,7 +48,7 @@ $( function() {
                 setLife(0);
                 break;
             case 'feed':
-                setHunger(hungerLevel +=10);
+                setHunger(hungerLevel +=5);
                 break;
             case 'talk':
                 hungerLevel +=1;
@@ -105,7 +108,7 @@ $( function() {
         status.show();
         setLife(hp);
         if(hungerActivated) {
-            setHunger(10);
+            setHunger(5);
         }
     }
     
@@ -116,6 +119,19 @@ $( function() {
     function endGame() {
         $(".game div.section").not("#death").hide();
         $(".game #death").show();
+        status.hide();
+        $(".game #death button").click(function(event) {
+            location.reload();
+        });
+    }
+
+    function endGameHunger() {
+        $(".game div.section").not("#death-hunger").hide();
+        $(".game #death-hunger").show();
+        status.hide();
+        $(".game #death-hunger button").click(function(event) {
+            location.reload();
+        });
     }
 
     /**
