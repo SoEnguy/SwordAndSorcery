@@ -21,8 +21,10 @@ $( function() {
         localStorage.setItem("hunger", getHunger());
         $(".game div.section:visible").not("#"+key).hide();
         $(".game #"+key).show();
-        
-        $("body").css('background-image', 'url("/images/'+$(".game #"+key+" bg").getAttr("value")+'"');
+
+        var bg = $(".game #"+key).find("bg").attr("value");
+
+        $("body").css('background-image', 'url("/images/'+ bg + '"');
     }
 
     function doAction(key) {
